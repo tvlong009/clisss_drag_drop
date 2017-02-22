@@ -1,0 +1,17 @@
+
+<div class="col-sm-7">
+    <div class="row">
+        <div class="backgroundEditor">
+          <h2>DEMO</h2>
+          <!-- Trigger the modal with a button -->
+          <button  class="green" (click)='saveHTMlToJson($event)' id="preview">Preview</button>
+          <div id="bodyHTML" #editorBox [dragula]='"choose-component"'>
+          </div>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<div #styleBox >
+  <app-stylebox></app-stylebox>
+</div>

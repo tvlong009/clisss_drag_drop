@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+$alice_blue: #f0f8ff;
+$white:  #fff;
+$blue: #337ab7;
+$green: #5cb85c;
+$yellow: #f0ad4e;
+$bluelight: #5bc0de;
+$red: #d9534f;
+$gray: #ccc;
+$black: #333;
+$graylight: #eee;
+
+* {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.blueBackg {
+	background-color: $blue;
+}
+.yellowBackg {
+	background-color: $yellow;
+}
+.greenBackg {
+	background-color: $green;
+}
+.bluelightBackg {
+	background-color: $bluelight;
+}
+.redBackg {
+	background-color: $red;
+}
+.grayBackg {
+	background-color: $gray;
+}
+.graylightBackg {
+	background-color: $graylight;
+}
+.whiteBackg {
+	background-color: $white;
+}

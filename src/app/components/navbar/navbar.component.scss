@@ -1,0 +1,23 @@
+@import '../../../styles';
+
+#barflex {
+	display: flex;
+}
+.navbar-header {
+	flex-grow: 2;
+}
+
+.collapse {
+	flex-grow: 11;
+}
+
+.navbar {
+	.navbar-nav {
+		display: inline-block;
+		float: none;
+		vertical-align: top;
+	}
+	.navbar-collapse {
+		text-align: center;
+	}
+}

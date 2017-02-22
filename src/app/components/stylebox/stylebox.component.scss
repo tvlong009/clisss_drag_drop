@@ -1,0 +1,31 @@
+@import '../../../styles';
+
+.addBorder {
+	border: 1px solid $yellow;
+}
+
+#boxOfRule {
+	display: flex;
+	flex-direction: column;
+	@include buttons;
+}
+///BOX STYLE
+.boxOfStyleButton {
+	display: flex;
+	flex-direction: row-reverse;
+	margin-top: 5px;
+}
+#boxOfStyle {
+	display: flex;
+	flex-direction: column;
+}
+.element {
+	display: flex;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	@include selects;
+	@include inputs;
+}
+#mulSelectInput button {
+	width: 100%;
+}

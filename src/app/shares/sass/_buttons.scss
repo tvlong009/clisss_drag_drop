@@ -1,0 +1,45 @@
+@mixin buttons {
+  a.button, button {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    @include button( $black, $white , $gray);
+    &.blue  { @include button($white, $blue, #2e6da4); }
+    &.red   { @include button($white, $red, #d43f3a);}
+    &.green { @include button($white, $green, #4cae4c);}
+    &.bluelight { @include button($white, $bluelight, #46b8da);}
+    &.yellow { @include button($white, $yellow, #eea236);}
+  }
+}
+
+// Button mixin
+@mixin button($text-color, $bg-color, $bor-color) {
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  font: 12px bold sans-serif;
+  padding: 6px 12px;
+  margin: 2px 2px 0 2px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  @include color-button($text-color, $bg-color, $bor-color);
+  &:hover, &:focus { @include color-button($text-color, lighten($bg-color, 10%), $bor-color); }
+  &:active { background: darken($bg-color, 5%); }
+}
+
+// Color button mixin
+@mixin color-button($text-color, $bg-color, $bor-color) {
+  color: $text-color;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border-color: $bor-color;
+  background-color: $bg-color;
+}
