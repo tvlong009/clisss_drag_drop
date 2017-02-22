@@ -5,7 +5,8 @@
           <h2>DEMO</h2>
           <!-- Trigger the modal with a button -->
           <button  class="green" (click)='saveHTMlToJson($event)' id="preview">Preview</button>
-          <div id="bodyHTML" #editorBox [dragula]='"choose-component"'>
+          <div class="editorBox" id="bodyHTML" class="bodyHTML" [dragula]='"choose-component"'>
+              <div #editorBox style="display:none" ></div>
           </div>
         </div>
     </div>

@@ -10,25 +10,32 @@ import { DragulaModule } from 'ng2-dragula';
 import { EditorComponent } from './components/editor/editor.component';
 import { StyleboxComponent } from './components/stylebox/stylebox.component';
 import { ContainerComponent } from './components/container/container.component';
+import { SelectComponent } from './components/select/select.component';
 
 let pages = [
-DesignProjectComponent
+  DesignProjectComponent
 ];
 
 
 let components = [
- NavbarComponent,
- SidebarComponent,
- EditorComponent
+  NavbarComponent,
+  SidebarComponent,
+  EditorComponent,
+  StyleboxComponent,
+  ContainerComponent,
+  SelectComponent
+];
+
+let EntryComponents = [
+  ContainerComponent,
+  SelectComponent
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ...pages,
-    ...components,
-    StyleboxComponent,
-    ContainerComponent
+    ...components
   ],
   imports: [
     BrowserModule,
@@ -37,6 +44,9 @@ let components = [
     DragulaModule
   ],
   providers: [],
+  entryComponents:[
+    ...EntryComponents
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
