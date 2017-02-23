@@ -1,0 +1,13 @@
+@import '../../../styles';
+
+.addBorder {
+	border: 1px solid $yellow;
+}
+
+.componentClass {
+	display: flex;
+	flex-direction: column;
+	&:hover {
+		border: 1px solid $bluelight;
+	}
+}

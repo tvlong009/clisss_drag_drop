@@ -1,4 +1,4 @@
-import { Component, ViewContainerRef, ComponentFactoryResolver , ViewChild, OnInit } from '@angular/core';
+import { Component, ViewContainerRef, ElementRef, ComponentFactoryResolver , ViewChild, OnInit } from '@angular/core';
 import { DragulaService } from 'ng2-dragula';
 
 import {ContainerComponent} from '../container/container.component';
@@ -10,11 +10,16 @@ import {SelectComponent} from '../select/select.component';
 })
 export class EditorComponent implements OnInit {
   timestamp = new Date().getTime();
+  event: any;
+
   @ViewChild('editorBox', { read: ViewContainerRef})
   editorBox: ViewContainerRef;
 
   @ViewChild('styleBox', { read: ViewContainerRef})
   styleBox: ViewContainerRef;
+
+  @ViewChild('getHTML') 
+  html: ElementRef;
 
   public constructor(
     private dragulaService:DragulaService, 
@@ -66,7 +71,7 @@ export class EditorComponent implements OnInit {
            viewContainerRef.createComponent(Component);
            el.removeChild(e);
         }
-      break;
+        break;
     }
   }
 
@@ -81,5 +86,9 @@ export class EditorComponent implements OnInit {
     }else if(check != 'yes' && componentName == 'childcontainer-component'){
       e.setAttribute('data-component-name', 'container-component');
     }
+  }
+
+  saveHTMlToJson(event){
+    console.log(this.html.nativeElement);
   }
 }

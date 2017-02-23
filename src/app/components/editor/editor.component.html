@@ -3,9 +3,13 @@
     <div class="row">
         <div class="backgroundEditor">
           <h2>DEMO</h2>
-          <!-- Trigger the modal with a button -->
+
+         
+          <!-- Trigger a button -->
           <button  class="green" (click)='saveHTMlToJson($event)' id="preview">Preview</button>
-          <div class="editorBox" id="bodyHTML" class="bodyHTML" [dragula]='"choose-component"'>
+          <button class="blue">Save</button>
+
+          <div class="editorBox" #getHTML id="bodyHTML" class="bodyHTML" [dragula]='"choose-component"'>
               <div #editorBox style="display:none" ></div>
           </div>
         </div>

@@ -1,64 +1,60 @@
 <div class="col-sm-3">
-    <div class="well" id="boxOfRule" >
-        <div  id="boxOfStyle" >
-                <ul class="nav nav-tabs">
-                <li class="active"><a href="#proContainer" data-toggle="tab">Properties</a></li>
-                <li><a href="#rulesContainer" data-toggle="tab">Rules</a></li>
-            </ul>
-            <div  class="tab-content">
-            <div class="tab-pane active in" id="proContainer">
-                    <div class="element">
-                        <button type="button" class="green" data-toggle="modal" data-target="#myModal" id="chooseComponent"> 
-                        Add Element
-                        </button>
-                        <button class="bluelight addContainerStyleBox"> Add container</button>
-                    </div>
-                    <div class="element">
-                        <label>Tag</label>
-                            <div class="inputCover">
-                            <div class="inputLabel ">Tag</div>
-                            <input type="text" value="div">
-                            </div>
-                    </div>
-                    <div class="element">
-                        <label>Classes</label>
-                            <div class="inputCover">
-                            <div class="inputLabel">Class</div>
-                            <input type="text" placeholder="your Class">
-                            </div>
-                    </div>
-                    <div class="element">
-                        <label></label>
-                            <div class="display selectCover">
-                            <div class="selectLabel ">Display</div>
-                            <select id="BS_displayContainer">
-                                <option value="column">Column</option>
-                                <option value="row">Row</option>
-                            </select>
-                            </div>
-                    </div>
-                    <div class="element">
-                        <label>Background</label>
-                            <div class="bg-color selectCover">
-                            <div class="selectLabel "> Background </div>
-                            <select id="BS_bgColorContainer">
-                                <option value="default"> No color</option>
-                                <option value="blue">Blue</option>
-                                <option value="red">Red</option>
-                                <option value="yellow">Yellow</option>
-                                <option value="bluelight">BlueLight</option>
-                            </select>
-                            </div>
-                    </div>
+    <tabset class="well boxOfRule">
+        <tab #styleBox heading="Properties">
+            <div class="tab-pane active in">
+                <div class="element">
+                    <button type="button" class="green" data-toggle="modal" data-target="#myModal" id="chooseComponent"> 
+                    Add Element
+                    </button>
+                    <button class="bluelight addContainerStyleBox"> Add container</button>
+                </div>
+                <div class="element">
+                    <label>Tag</label>
+                        <div class="inputCover">
+                        <div class="inputLabel ">Tag</div>
+                        <input type="text" value="div">
+                        </div>
+                </div>
+                <div class="element">
+                    <label>Classes</label>
+                        <div class="inputCover">
+                        <div class="inputLabel">Class</div>
+                        <input type="text" placeholder="your Class">
+                        </div>
+                </div>
+                <div class="element">
+                    <label></label>
+                        <div class="display selectCover">
+                        <div class="selectLabel ">Display</div>
+                        <select id="BS_displayContainer">
+                            <option value="column">Column</option>
+                            <option value="row">Row</option>
+                        </select>
+                        </div>
+                </div>
+                <div class="element">
+                    <label>Background</label>
+                        <div class="bg-color selectCover">
+                        <div class="selectLabel "> Background </div>
+                        <select id="BS_bgColorContainer">
+                            <option value="default"> No color</option>
+                            <option value="blue">Blue</option>
+                            <option value="red">Red</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="bluelight">BlueLight</option>
+                        </select>
+                        </div>
+                </div>
             
-                    <div class="boxOfStyleButton">
+                <div class="boxOfStyleButton">
                     <button class="saveStyle blue">Save</button> 
                     <button class="deleteStyle red">Delete</button>  
                     <button >Cancel</button> 
-                    </div>
                 </div>
-                <div class="tab-pane fade " id="rulesContainer">Rule</div>
             </div>
-        </div>
-    </div>
+        </tab>
+        <tab heading="Rules">
+            Rule here
+        </tab>
+    </tabset>
 </div>

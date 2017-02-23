@@ -13,6 +13,10 @@ import { ContainerComponent } from './components/container/container.component';
 import { SelectComponent } from './components/select/select.component';
 import { MultipleSelectComponent } from './components/multiple-select/multiple-select.component';
 
+//Boostrap
+import { DropdownModule } from 'ng2-bootstrap';
+import { TabsModule } from 'ng2-bootstrap';
+
 let pages = [
   DesignProjectComponent
 ];
@@ -44,7 +48,9 @@ let EntryComponents = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    DragulaModule
+    DragulaModule,
+    DropdownModule.forRoot(),
+    TabsModule.forRoot()
   ],
   providers: [],
   entryComponents:[

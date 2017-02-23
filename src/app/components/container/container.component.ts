@@ -1,4 +1,4 @@
-import { Component, forwardRef ,ViewContainerRef, ComponentFactoryResolver , ViewChild, OnInit } from '@angular/core';
+import { Component, forwardRef ,ViewContainerRef, ElementRef,ComponentFactoryResolver , ViewChild, OnInit } from '@angular/core';
 import { DragulaService } from 'ng2-dragula';
 
 import {SelectComponent} from '../select/select.component';
@@ -11,7 +11,12 @@ import {MultipleSelectComponent} from '../multiple-select/multiple-select.compon
 export class ContainerComponent implements OnInit {
     @ViewChild('childcontainer', { read: ViewContainerRef })
     childcontainer : ViewContainerRef;
+
+    @ViewChild('getELement') El: ElementRef;
+
     timestamp = new Date().getTime();
+    event: any;
+
   public constructor
   (
     private dragulaService:DragulaService, 
@@ -58,6 +63,14 @@ export class ContainerComponent implements OnInit {
           }
           break;
      }
+  }
+
+  chooseContainer(event){
+    this.El.nativeElement.classList.add('addBorder');
+  }
+
+  saveHtmlToJson(event){
+
   }
 
 }
