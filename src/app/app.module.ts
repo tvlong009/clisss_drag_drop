@@ -11,6 +11,7 @@ import { EditorComponent } from './components/editor/editor.component';
 import { StyleboxComponent } from './components/stylebox/stylebox.component';
 import { ContainerComponent } from './components/container/container.component';
 import { SelectComponent } from './components/select/select.component';
+import { MultipleSelectComponent } from './components/multiple-select/multiple-select.component';
 
 let pages = [
   DesignProjectComponent
@@ -23,12 +24,14 @@ let components = [
   EditorComponent,
   StyleboxComponent,
   ContainerComponent,
-  SelectComponent
+  SelectComponent,
+  MultipleSelectComponent
 ];
 
 let EntryComponents = [
   ContainerComponent,
-  SelectComponent
+  SelectComponent,
+  MultipleSelectComponent
 ];
 
 @NgModule({

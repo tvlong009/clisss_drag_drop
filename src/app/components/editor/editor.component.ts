@@ -57,22 +57,17 @@ export class EditorComponent implements OnInit {
 
     // Hide title 
     let Component = null;
-    let  EL = null;
+    let  viewContainerRef = null;
     switch(componentName){
       case 'container-component': 
         Component = this.componentFactoryResolver.resolveComponentFactory(ContainerComponent);
-        EL = this.editorBox;
+        viewContainerRef = this.editorBox;
         if (el.id == IdEditorBox){
-           EL.createComponent(Component);
+           viewContainerRef.createComponent(Component);
+           el.removeChild(e);
         }
-        break;
-      case 'select-component':
-        Component = this.componentFactoryResolver.resolveComponentFactory(SelectComponent);
-        EL = this.editorBox;
-        EL.createComponent(Component);
       break;
     }
-    el.removeChild(e);
   }
 
   private onOver(args) {

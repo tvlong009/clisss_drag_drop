@@ -52,7 +52,8 @@
 			min-width: 150px;
 			word-wrap: break-word;
 			overflow-wrap: normal;
-			@include label_select_style($black, $graylight , $gray);
+			@include transition;
+			@include select_style($black, $white , $gray);
 		    &.blue  { @include select_style($white, $blue, #2e6da4); }
 		    &.red   { @include select_style($white, $red, #d43f3a);}
 		    &.green { @include select_style($white, $green, #4cae4c);}
