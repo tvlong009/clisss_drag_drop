@@ -1,6 +1,5 @@
 import { Component, ViewContainerRef, ElementRef, ComponentFactoryResolver , ViewChild, OnInit } from '@angular/core';
 import { DragulaService } from 'ng2-dragula';
-
 import {ContainerComponent} from '../container/container.component';
 import {SelectComponent} from '../select/select.component';
 @Component({
@@ -23,7 +22,8 @@ export class EditorComponent implements OnInit {
 
   public constructor(
     private dragulaService:DragulaService, 
-    private componentFactoryResolver: ComponentFactoryResolver
+    private componentFactoryResolver: ComponentFactoryResolver,
+    
   )
   {
     // Get el and e from draula service value 
@@ -88,7 +88,58 @@ export class EditorComponent implements OnInit {
     }
   }
 
-  saveHTMlToJson(event){
-    console.log(this.html.nativeElement);
+  private saveHTMlToJson(event){
+    let htmlEL = this.html.nativeElement;
+    let json = this.convertHTMLToJson(htmlEL, true);
+
+    //Conver String Json Object
+    let JsonObject = JSON.parse(json);
+    let selector = this.html.nativeElement;
+    let newhtml = this.convertJsonToHTML(JsonObject, selector);
+
+    // console.log(newhtml);
+
+    //this.html.nativeElement.appendChild(newhtml);
+     let parser = new DOMParser()
+     //var el = parser.parseFromString(newhtml, "text/xml");
+  //   console.log(newhtml['html']);
+  //   console.log(docNode);
+  // }
   }
+  public convertHTMLToJson(element, json) {
+        var treeObject = {};
+        //Recursively loop through DOM elements and assign properties to object
+        function treeHTML(element, object) {
+            object["tag"] = element.nodeName;
+            var nodeList = element.childNodes;
+            if (nodeList != null) {
+                if (nodeList.length) {
+                    object["html"] = [];
+                    for (var i = 0; i < nodeList.length; i++) {
+                        if (nodeList[i].nodeType == 3) {
+                            object["html"].push(nodeList[i].nodeValue);
+                        } else {
+                            object["html"].push({});
+                            treeHTML(nodeList[i], object["html"][object["html"].length -1]);
+                        }
+                    }
+                }
+            }
+            if (element.attributes != null) {
+                if (element.attributes.length) {
+                    for (var i = 0; i < element.attributes.length; i++) {
+                        object[element.attributes[i].nodeName] = element.attributes[i].nodeValue;
+                    }
+                }
+            }
+        }
+        treeHTML(element, treeObject);
+        return JSON.stringify(treeObject);
+    }
+
+    public convertJsonToHTML(JsonObject, selector){
+      let options = [{}];
+       selector.innerHTML = json2html.transform(options, JsonObject, {});  
+    }
+  
 }
