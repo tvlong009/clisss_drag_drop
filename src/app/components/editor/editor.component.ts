@@ -95,16 +95,10 @@ export class EditorComponent implements OnInit {
     //Conver String Json Object
     let JsonObject = JSON.parse(json);
     let selector = this.html.nativeElement;
-    let newhtml = this.convertJsonToHTML(JsonObject, selector);
 
-    // console.log(newhtml);
+    //Show Preview
+    this.convertJsonToHTML(JsonObject, selector);
 
-    //this.html.nativeElement.appendChild(newhtml);
-     let parser = new DOMParser()
-     //var el = parser.parseFromString(newhtml, "text/xml");
-  //   console.log(newhtml['html']);
-  //   console.log(docNode);
-  // }
   }
   public convertHTMLToJson(element, json) {
         var treeObject = {};
@@ -117,7 +111,7 @@ export class EditorComponent implements OnInit {
                     object["html"] = [];
                     for (var i = 0; i < nodeList.length; i++) {
                         if (nodeList[i].nodeType == 3) {
-                            object["html"].push(nodeList[i].nodeValue);
+                            object["html"] = nodeList[i].nodeValue
                         } else {
                             object["html"].push({});
                             treeHTML(nodeList[i], object["html"][object["html"].length -1]);
@@ -139,7 +133,7 @@ export class EditorComponent implements OnInit {
 
     public convertJsonToHTML(JsonObject, selector){
       let options = [{}];
-       selector.innerHTML = json2html.transform(options, JsonObject, {});  
+      selector.innerHTML = json2html.transform(options, JsonObject, {});  
     }
   
 }
